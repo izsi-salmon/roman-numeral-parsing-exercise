@@ -23,5 +23,20 @@ namespace Test
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData(1, "I")]
+        [InlineData(2, "II")]
+        [InlineData(3, "III")]
+        [InlineData(4, "IIII")]
+        public void OneToFour(int input, string expected)
+        {
+            // Arrange
+            ld_exercise.RomanNumeralParsing sut = new RomanNumeralParsing();
+            // Act
+            var actual = sut.Parse(input);
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }

@@ -3,6 +3,9 @@
 // Commands
 // dotnet watch run [arguments] – reruns the programme each time file changes, ie on save
 
+// Short cuts
+// ctrl + k + d = format code
+
 using System;
 using System.Collections.Generic;
 
