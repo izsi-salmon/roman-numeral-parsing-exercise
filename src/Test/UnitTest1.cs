@@ -38,5 +38,20 @@ namespace Test
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData(157, "CLVII")]
+        [InlineData(999, "DCCCCLXXXXVIIII")]
+        [InlineData(1444, "MCCCCXXXXIIII")]
+        [InlineData(20509, "MMMMMMMMMMMMMMMMMMMMDVIIII")]
+        public void ComplexCombinations(int input, string expected)
+        {
+            // Arrange
+            ld_exercise.RomanNumeralParsing sut = new RomanNumeralParsing();
+            // Act
+            var actual = sut.ParseRomanNumerals(input);
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
