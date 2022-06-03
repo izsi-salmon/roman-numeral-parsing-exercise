@@ -1,7 +1,10 @@
 ﻿// Lesson notes
 
-// Commands
+// Commandline commands
+// dontnet run [arguments] – runs the program
+// dotnet test – runs the unit tests
 // dotnet watch run [arguments] – reruns the programme each time file changes, ie on save
+// dotnet watch test – runs the tests each time files change
 
 // Short cuts
 // ctrl + k + d = format code
@@ -17,8 +20,8 @@ namespace ld_exercise
     {
         public static void Main(string[] args)
         {
-            // int parsedInput = int.Parse(input[0]);
-            // Console.WriteLine($"Input: {parsedInput}, Output: {output}");
+            var parsedInput = int.Parse(args[0]);
+            new RomanNumeralParsing().PrintRomanNumerals(parsedInput);
         }
     }
 }

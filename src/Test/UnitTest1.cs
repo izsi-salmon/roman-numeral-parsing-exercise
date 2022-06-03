@@ -19,7 +19,7 @@ namespace Test
             // Arrange
             ld_exercise.RomanNumeralParsing sut = new RomanNumeralParsing();
             // Act
-            var actual = sut.Parse(input);
+            var actual = sut.ParseRomanNumerals(input);
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -34,7 +34,7 @@ namespace Test
             // Arrange
             ld_exercise.RomanNumeralParsing sut = new RomanNumeralParsing();
             // Act
-            var actual = sut.Parse(input);
+            var actual = sut.ParseRomanNumerals(input);
             // Assert
             Assert.Equal(expected, actual);
         }
