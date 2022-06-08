@@ -33,6 +33,13 @@ namespace ld_exercise
 
             int total = input;
 
+            foreach (var romanNumeral in _romanNumerals)
+            {
+                Processor(romanNumeral.Key, romanNumeral.Value);
+            }
+
+            return result.ToString();
+
             void Processor(int romanNumeralNumber, char romanNumeralSymbol)
             {
                 string numberOfNumerals = new string(romanNumeralSymbol, total / romanNumeralNumber);
@@ -41,13 +48,6 @@ namespace ld_exercise
 
                 total %= romanNumeralNumber;
             }
-
-            foreach (var romanNumeral in _romanNumerals)
-            {
-                Processor(romanNumeral.Key, romanNumeral.Value);
-            }
-
-            return result.ToString();
         }
     }
 }
