@@ -35,12 +35,12 @@ namespace ld_exercise
 
             foreach (var romanNumeral in _romanNumerals)
             {
-                Processor(romanNumeral.Key, romanNumeral.Value);
+                AppendRomanNumerals(romanNumeral.Key, romanNumeral.Value);
             }
 
             return result.ToString();
 
-            void Processor(int romanNumeralNumber, char romanNumeralSymbol)
+            void AppendRomanNumerals(int romanNumeralNumber, char romanNumeralSymbol)
             {
                 string numberOfNumerals = new string(romanNumeralSymbol, total / romanNumeralNumber);
 
