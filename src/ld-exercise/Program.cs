@@ -11,6 +11,8 @@
 
 using System;
 using System.Collections.Generic;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 
 // Like the shelf in the library
 namespace ld_exercise
@@ -22,6 +24,11 @@ namespace ld_exercise
         {
             var parsedInput = int.Parse(args[0]);
             new RomanNumeralParsing().PrintRomanNumerals(parsedInput);
+        }
+
+        public static void BenchMarkMyCode(String[] args)
+        {
+            var summary = BenchmarkRunner.Run(typeof(Program).Assembly);
         }
     }
 }

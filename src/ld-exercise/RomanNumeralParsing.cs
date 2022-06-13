@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BenchmarkDotNet.Attributes;
 
 namespace ld_exercise
 {
@@ -27,6 +28,7 @@ namespace ld_exercise
             Console.WriteLine(result);
         }
 
+        [Benchmark]
         public string ParseRomanNumerals(int input)
         {
             StringBuilder result = new StringBuilder();
@@ -48,6 +50,76 @@ namespace ld_exercise
 
                 total %= romanNumeralNumber;
             }
+        }
+
+        [Benchmark]
+        public string ParseRomanNumeralsBeta(int input)
+        {
+            string output = "";
+
+            int total = input;
+
+            int numberOfThousands = input / 1000;
+
+            StringBuilder result = new StringBuilder();
+
+            for (int i = 0; i < numberOfThousands; i++)
+            {
+                result.Append(_romanNumerals[1000]);
+                total -= 1000;
+            }
+
+            int numberOfFiveHundreds = total / 500;
+
+            for (int i = 0; i < numberOfFiveHundreds; i++)
+            {
+                result.Append(_romanNumerals[500]);
+                total -= 500;
+            }
+
+            int numberOfHundreds = total / 100;
+
+            for (int i = 0; i < numberOfHundreds; i++)
+            {
+                result.Append(_romanNumerals[100]);
+                total -= 100;
+            }
+
+            int numberOfFifties = total / 50;
+
+            for (int i = 0; i < numberOfFifties; i++)
+            {
+                result.Append(_romanNumerals[50]);
+                total -= 50;
+            }
+
+            int numberOfTens = total / 10;
+
+            for (int i = 0; i < numberOfTens; i++)
+            {
+                result.Append(_romanNumerals[10]);
+                total -= 10;
+            }
+
+
+            int numberOfFives = total / 5;
+
+            for (int i = 0; i < numberOfFives; i++)
+            {
+                result.Append(_romanNumerals[5]);
+                total -= 5;
+            }
+
+            int numberOfOnes = total;
+
+            for (int i = 0; i < numberOfOnes; i++)
+            {
+                result.Append(_romanNumerals[1]);
+            }
+
+            output = result.ToString();
+
+            return output;
         }
     }
 }
