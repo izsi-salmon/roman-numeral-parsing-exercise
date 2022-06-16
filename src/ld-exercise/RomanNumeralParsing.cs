@@ -28,7 +28,6 @@ namespace ld_exercise
             Console.WriteLine(result);
         }
 
-        [Benchmark]
         public string ParseRomanNumerals(int input)
         {
             StringBuilder result = new StringBuilder();
@@ -52,7 +51,6 @@ namespace ld_exercise
             }
         }
 
-        [Benchmark]
         public string ParseRomanNumeralsBeta(int input)
         {
             string output = "";

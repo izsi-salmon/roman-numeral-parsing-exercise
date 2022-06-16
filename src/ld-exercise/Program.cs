@@ -24,9 +24,11 @@ namespace ld_exercise
         {
             var parsedInput = int.Parse(args[0]);
             new RomanNumeralParsing().PrintRomanNumerals(parsedInput);
+
+            BenchMarkMyCode();
         }
 
-        public static void BenchMarkMyCode(String[] args)
+        public static void BenchMarkMyCode()
         {
             var summary = BenchmarkRunner.Run(typeof(Program).Assembly);
         }
